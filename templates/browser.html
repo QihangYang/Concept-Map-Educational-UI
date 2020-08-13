@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<title>File Browser</title>
+<h1>File Browser</h1>
+<a href="{{ url_for('upload_file') }}">Upload</a> /
+<a href="{{ url_for('manage_file') }}">Manage</a>
+<hr>
+
+<p>URL: {{ file_url }}</p>
+<img src="{{ file_url }}" width = "1000">
+
+<p> QUESTION ID: {{ quesID }}</p>
+
+<p> QUESTION TEXT: {{ ques_text }}</p>
+
+<p> 
+CONCEPTS:
+{% if tags %}
+	{% for tag in tags %}
+		{{ tag }}, 
+	{% endfor %}
+{% else %}
+	NO MATCH
+{% endif %}
+</p>
